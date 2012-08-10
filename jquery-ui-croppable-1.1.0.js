@@ -226,9 +226,6 @@
       //box.$cropbox.css( {backgroundImage: 'url("' + self.$image.attr('src') + '")'} );
       $( '.croppable-box-gobo', box.$cropbox ).css( {backgroundColor: options.bgColor} );
       
-      // line up background with possible scrolled page
-      Croppable.moveBackground( box );
-      
       // ------------------------------------------------------------------
       // Set initial frame position
       // ------------------------------------------------------------------
@@ -342,32 +339,6 @@
         );
       }
       
-      // ------------------------------------------------------------------
-      // Setup focus handling
-      // ------------------------------------------------------------------
-      box.$cropbox.on(
-        'mousedown',
-        function( evt )
-        {
-          /*if( $(evt.target).parent().hasClass('active') )
-          {
-            console.log( evt );
-            console.log( $cropbox.offset().left, $cropbox.offset().top, $cropbox.width(), $cropbox.height() );
-            console.log($('.croppable-box:not(.active)', self.$container));
-          }*/
-          
-          Croppable.setBoxFocus( box );
-        }
-      );
-      
-      box.$preview.on(
-        'click',
-        function( evt )
-        {
-          Croppable.setBoxFocus( box );
-        }
-      );
-      
       return box;
     },
     
@@ -399,19 +370,6 @@
 
     Croppable.init(this, options);
 
-    $(window).scroll(
-      function()
-      {
-        $.each(
-          self.boxState,
-          function( index, box )
-          {
-            Croppable.moveBackground( box );
-          }
-        );
-      }
-    );
-    
     return this;
   };
 })( jQuery );
