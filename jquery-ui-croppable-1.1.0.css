@@ -1,0 +1,135 @@
+/* croppable css, crop handle styling borrowed from jcrop-0.9.10 */
+.croppable-container
+{
+  position:relative;
+  color:inherit;
+  background-color:black;
+}
+
+.croppable-image
+{
+  border:1px #000 solid;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.croppable-box
+{
+  z-index:1000;
+  position:absolute;
+  cursor:move;
+  background:no-repeat fixed;
+  
+  opacity:0.4;
+  filter:alpha(opacity=40);
+}
+
+.croppable-box.active
+{
+  opacity:0.7;
+  z-index:1100;
+}
+
+.croppable-box-gobo
+{
+  z-index:900;
+  position:absolute;
+  
+  width:100%;
+  height:100%;
+  opacity:0.5;
+}
+
+.croppable-box .ui-resizable-handle
+{
+  z-index:1001;
+  position:absolute;
+  
+  width:7px;
+  height:7px;
+  
+  border:1px #AAA solid;
+  
+  color:inherit;
+  background-color:#333;
+  
+  font-size:1px;
+}
+
+/* Crop handles */
+.croppable-box .ui-resizable-nw { top:0;left:0;margin-top:-4px;margin-left:-4px; }
+.croppable-box .ui-resizable-n { top:0;left:50%;margin-top:-4px;margin-left:-4px; }
+.croppable-box .ui-resizable-ne { top:0;right:0;margin-top:-4px;margin-right:-4px; }
+.croppable-box .ui-resizable-e { top:50%;right:0;margin-top:-4px;margin-right:-4px; }
+.croppable-box .ui-resizable-se { bottom:0;right:0;margin-bottom:-4px;margin-right:-4px; }
+.croppable-box .ui-resizable-s { bottom:0;left:50%;margin-bottom:-4px;margin-left:-4px; }
+.croppable-box .ui-resizable-sw { bottom:0;left:0;margin-bottom:-4px;margin-left:-4px; }
+.croppable-box .ui-resizable-w { top:50%;left:0;margin-top:-4px;margin-left:-4px; }
+
+
+/* These styles define the border lines */
+.croppable-vline,
+.croppable-hline
+{
+  background:#FFF url('border.gif') top left repeat;
+  font-size:0;
+  position:absolute;
+}
+
+.croppable-vline
+{
+  width:1px !important;
+  height:100%;
+}
+
+.croppable-vline.right
+{
+  right:0;
+}
+
+.croppable-hline
+{
+  width:100%;
+  height:1px !important;
+}
+
+.croppable-hline.bottom
+{
+  bottom:0;
+}
+
+/* Handle style - size is set by Jcrop handleSize option (currently) */
+.croppable-handle
+{
+}
+
+/* Positioning of handles and drag bars */
+.jcrop-handle.ord-n{left:50%;margin-left:-4px;margin-top:-4px;top:0;}
+.jcrop-handle.ord-s{bottom:0;left:50%;margin-bottom:-4px;margin-left:-4px;}
+.jcrop-handle.ord-e{margin-right:-4px;margin-top:-4px;right:0;top:50%;}
+.jcrop-handle.ord-w{left:0;margin-left:-4px;margin-top:-4px;top:50%;}
+.jcrop-handle.ord-nw{left:0;margin-left:-4px;margin-top:-4px;top:0;}
+.jcrop-handle.ord-ne{margin-right:-4px;margin-top:-4px;right:0;top:0;}
+.jcrop-handle.ord-se{bottom:0;margin-bottom:-4px;margin-right:-4px;right:0;}
+.jcrop-handle.ord-sw{bottom:0;left:0;margin-bottom:-4px;margin-left:-4px;}
+
+.jcrop-dragbar.ord-n,.jcrop-dragbar.ord-s{height:7px;width:100%;}
+.jcrop-dragbar.ord-e,.jcrop-dragbar.ord-w{height:100%;width:7px;}
+.jcrop-dragbar.ord-n{margin-top:-4px;}
+.jcrop-dragbar.ord-s{bottom:0;margin-bottom:-4px;}
+.jcrop-dragbar.ord-e{margin-right:-4px;right:0;}
+.jcrop-dragbar.ord-w{margin-left:-4px;}
+
+/* Fix for twitter bootstrap et al. */
+/*.jcrop-holder img,img.jcrop-preview{ max-width: none; }*/
+
+
+.croppable-preview
+{
+  overflow:hidden;
+  border:1px solid;
+}
