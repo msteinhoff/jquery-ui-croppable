@@ -13,7 +13,7 @@ You'll need jQuery, jQuery UI and some backend that supports cropping. Croppable
 ## How do I use it?
 Call the plugin on an image and pass it some configuration options.
 
-###Example:
+### Example:
 ```javascript
 $('#some-image').croppable(
 {
@@ -49,7 +49,7 @@ $('#some-image').croppable(
 
 You can listen for coordinates using standard jQuery events.
 
-# Events to bind on
+## Events to bind on
 The parameters are the same on both events:
 
 * evt is the original event
@@ -58,7 +58,7 @@ The parameters are the same on both events:
 
 The events derive from jQuery UI resizeable (start, resize, stop) and draggable (start, drag, stop).
 
-## croppable.change
+### croppable.change
 This event fires everytime the crop box size is changed.
 
 When preview is activated for the crop box, this event is used internally for updating the preview.
@@ -74,7 +74,7 @@ $('#some-image').on(
 );
 ```
 
-## croppable.select
+### croppable.select
 This event fires when the user has finished a crop box resize.
 
 _Example_
@@ -97,11 +97,11 @@ $('#some-image').on(
 See [original repository](https://github.com/EvilScott/jquery-ui-croppable).
 
 ## Known issues
-# Resize to top/left
+### Resize to top/left
 The jQuery UI resizeable plugin seems to be buggy when resizing is used with an combination of containment and minWidth/minHeight.
 When a crop box is at the top/left corner and the users pulls the resize handle to top/left, the calculation messes up and the box gets smaller than minWidth/minHeight. When changing the size again, the box jumps back to minWidth/minHeight.
 
-# Minified version missing
+### Minified version missing
 I was to lazy to include one. Also, minified versions can be generated easily, and I think resources that can be generated should not be put under version control.
 
 Currently only tested in Chrome 21.0.x.
